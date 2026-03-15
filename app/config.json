@@ -1,0 +1,10 @@
+{
+  "serviceName": "Check fixed penalty notices",
+  "serviceUrl": "/start",
+  "useAuth": false,
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
+}
