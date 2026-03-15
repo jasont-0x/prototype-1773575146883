@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Check your answers before sending" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+
+    <h1 class="govuk-heading-xl">Check your answers before sending</h1>
+
+    {{ govukSummaryList({
+      rows: [
+      {
+        key: { text: "What is your vehicle registration number?" },
+        value: { text: data["vehicle-registration"] if data["vehicle-registration"] else "Not answered" },
+        actions: {
+          items: [{
+            href: "/vehicle-registration",
+            text: "Change",
+            visuallyHiddenText: "what is your vehicle registration number?"
+          }]
+        }
+      },
+      {
+        key: { text: "Are you the registered keeper of this vehicle?" },
+        value: { text: data["vehicle-owner"] if data["vehicle-owner"] else "Not answered" },
+        actions: {
+          items: [{
+            href: "/vehicle-owner",
+            text: "Change",
+            visuallyHiddenText: "are you the registered keeper of this vehicle?"
+          }]
+        }
+      }
+      ]
+    }) }}
+
+    <form method="post" novalidate>
+      {{ govukButton({ text: "Confirm and send" }) }}
+    </form>
+
+  </div>
+</div>
+{% endblock %}
