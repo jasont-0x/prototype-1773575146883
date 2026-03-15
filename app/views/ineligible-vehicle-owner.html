@@ -1,0 +1,18 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "You cannot use this service" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+
+    <h1 class="govuk-heading-xl">You cannot use this service</h1>
+    <p class="govuk-body">You can only check penalty notices if you are the registered keeper. Ask the registered keeper to check for penalty notices or call 0300 123 1000.</p>
+    <h2 class="govuk-heading-m">What you can do</h2>
+    <p class="govuk-body">If you think this is wrong, <a href="/start" class="govuk-link">start again</a> or contact us for help.</p>
+
+  </div>
+</div>
+{% endblock %}
